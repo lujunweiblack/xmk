@@ -1,0 +1,77 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/index/index",
+			"style":{
+				"navigationStyle":"custom"
+			}
+			}
+	    ,{
+            "path" : "pages/moka/moka",
+            "style" : {
+            	"navigationStyle":"custom"
+            }
+        }
+        ,{
+            "path" : "pages/msg/msg",
+            "style" : {
+            	"navigationStyle":"custom"
+            }
+        }
+        ,{
+            "path" : "pages/my/my",
+            "style" : {
+				"navigationStyle":"custom"
+			}
+        }
+        ,{
+            "path" : "pages/pub/pub",
+            "style" : {}
+        }
+        
+    ],
+	"globalStyle": {
+		"navigationBarBackgroundColor":"#F8F8F8",
+		"navigationBarTextStyle":"black"
+	},
+	"tabBar":{
+		"color":"#a46e37",
+		"selectedColor":"#643506",
+		"backgroundColor":"#F8F8F8",
+		// #ifdef H5
+		"fontSize":"10px",
+		// #endif
+	"list":[
+		{
+			"pagePath":"pages/index/index",
+			"iconPath":"static/tabBar/index-0.png",
+			"selectedIconPath":"static/tabBar/index-1.png",
+			"text":"首页"
+		},
+		{
+			"pagePath":"pages/moka/moka",
+			"iconPath":"static/tabBar/mk-0.png",
+			"selectedIconPath":"static/tabBar/mk-1.png",
+			"text":"模卡"
+		},
+		
+		{
+			"pagePath":"pages/pub/pub",
+			"iconPath":"static/tabBar/pub-1.png",
+			"selectedIconPath":"static/tabBar/pub-1.png",
+			"text":"发布"
+		},
+		{
+			"pagePath":"pages/msg/msg",
+			"iconPath":"static/tabBar/msg-0.png",
+			"selectedIconPath":"static/tabBar/msg-1.png",
+			"text":"消息"
+		},
+		{
+			"pagePath":"pages/my/my",
+			"iconPath":"static/tabBar/my-0.png",
+			"selectedIconPath":"static/tabBar/my-1.png",
+			"text":"我的"
+		}
+	]}
+}
