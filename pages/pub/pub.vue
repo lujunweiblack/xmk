@@ -1,21 +1,21 @@
 <template>
 	<view class="wapper">
-		<view class="line-h">
-			<view style="align-items: center;display: flex;flex-direction:column">
-				<image src="../../static/tabBar/mk-1.png" style="width: 120rpx;height: 120rpx;">
-					<view>发布公告</view>
+		<view class="menu-line">
+			<view class="menu-item">
+				<image class="menu-item-image" src="../../static/pub/icon-1.png">
+					<text class="menu-item-text">发布公告</text>
 			</view>
-			<view style="align-items: center;display: flex;flex-direction:column">
-				<image src="../../static/tabBar/mk-1.png" style="width: 120rpx;height: 120rpx;">
-					<view>发布动态</view>
+			<view class="menu-item">
+				<image class="menu-item-image" src="../../static/pub/icon-1.png">
+					<text class="menu-item-text">发布动态</text>
 			</view>
-			<view style="align-items: center;display: flex;flex-direction:column">
-				<image src="../../static/tabBar/mk-1.png" style="width: 120rpx;height: 120rpx;">
-					<view>发布作品</view>
+			<view class="menu-item">
+				<image class="menu-item-image" src="../../static/pub/icon-1.png">
+					<text class="menu-item-text">发布作品</text>
 			</view>
-			<view style="align-items: center;display: flex;flex-direction:column">
-				<image src="../../static/tabBar/mk-1.png" style="width: 120rpx;height: 120rpx;">
-					<view>发布约拍</view>
+			<view class="menu-item">
+				<image class="menu-item-image" src="../../static/pub/icon-1.png">
+					<text class="menu-item-text">发布约拍</text>
 			</view>
 		</view>
 	</view>
@@ -54,15 +54,32 @@
 
 <style lang="scss">
 	.wapper {
-		.line-h {
+		.menu-line {
 			/* #ifdef MP-WEIXIN*/
-			padding-top: 980rpx;
+			padding-top: 880rpx;
 			/* #endif */
 			/* #ifdef H5*/
-			padding-top: 880rpx;
+			padding-top: 780rpx;
 			/* #endif */
 			display: flex;
 			justify-content: space-around;
+
+			.menu-item {
+				align-items: center;
+				display: flex;
+				flex-direction: column;
+
+				.menu-item-image {
+					width: 128rpx;
+					height: 128rpx;
+					margin-bottom: 18rpx;
+				}
+
+				.menu-item-text {
+					font-size: 30rpx;
+					color: #a46e37;
+				}
+			}
 		}
 	}
 </style>

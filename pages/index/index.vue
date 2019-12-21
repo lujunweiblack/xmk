@@ -1,6 +1,6 @@
 <template>
 	<view class="wrapper">
-		<uni-nav-bar status-bar="true" isCenter="true" backgroundColor="#F8F8F8" title="小模卡"></uni-nav-bar>
+		<uni-nav-bar status-bar="true" isCenter="true" backgroundColor="#F8F8F8"></uni-nav-bar>
 		<view>
 			<scroll-view id="tab-bar" class="scroll-h" :scroll-x="true" :show-scrollbar="false" :scroll-into-view="scrollInto">
 				<view v-for="(tab,index) in tabBars" :key="tab.id" class="uni-tab-item" :id="tab.id" :data-current="index" @click="ontabtap">
