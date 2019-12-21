@@ -8,14 +8,16 @@
 	import uniNavBar from "@/components/uni-nav-bar/uni-nav-bar.vue"
 
 	export default {
-		components: {uniNavBar},
+		components: {
+			uniNavBar
+		},
 		data() {
 			return {
-				
+
 			}
 		},
 		methods: {
-			
+
 		}
 	}
 </script>

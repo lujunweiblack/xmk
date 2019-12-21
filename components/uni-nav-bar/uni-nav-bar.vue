@@ -16,7 +16,9 @@
 				</view>
 				<view class="uni-navbar__header-container uni-navbar__content_view">
 					<view class="uni-navbar__header-container-inner uni-navbar__content_view" v-if="title.length">
-						<text class="uni-nav-bar-text" :style="{color: color }">{{ title }}</text>
+						<!-- 新增固定样式 -->
+						<image class="uni-navbar__header-container-inner-image" v-if="isCenter" src="../../static/index/logo-5.png"></image>
+						<text class="uni-nav-bar-text uni-navbar__header-container-inner-text">{{ title }}</text>
 					</view>
 					<!-- 标题插槽 -->
 					<slot />
@@ -54,6 +56,10 @@
 			title: {
 				type: String,
 				default: ""
+			},
+			isCenter: {
+				type: Boolean,
+				default: false
 			},
 			leftText: {
 				type: String,
@@ -96,11 +102,11 @@
 				default: true
 			}
 		},
-        mounted() {
-          if(uni.report && this.title !== '') {
-              uni.report('title', this.title)
-          }
-        },
+		mounted() {
+			if (uni.report && this.title !== '') {
+				uni.report('title', this.title)
+			}
+		},
 		methods: {
 			onClickLeft() {
 				this.$emit("clickLeft");
@@ -114,6 +120,7 @@
 
 <style lang="scss" scoped>
 	$nav-height: 44px;
+
 	.uni-nav-bar-text {
 		/* #ifdef APP-PLUS */
 		font-size: 34rpx;
@@ -122,6 +129,7 @@
 		font-size: $uni-font-size-lg;
 		/* #endif */
 	}
+
 	.uni-nav-bar-right-text {
 		font-size: $uni-font-size-base;
 	}
@@ -200,6 +208,18 @@
 		align-items: center;
 		justify-content: center;
 		font-size: $uni-font-size-base;
+	}
+
+	/* 新增固定样式 */
+	.uni-navbar__header-container-inner-image {
+		width: 50rpx;
+		height: 50rpx;
+	}
+
+	.uni-navbar__header-container-inner-text {
+		color: #a46e37;
+		font-size: 35rpx;
+		font-weight: bold
 	}
 
 
