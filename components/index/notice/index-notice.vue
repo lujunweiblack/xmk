@@ -1,7 +1,7 @@
 <template>
 	<view class="wapper">
 		<scroll-view class="scroll-v list" enableBackToTop="true" scroll-y @scrolltolower="loadMore()">
-			<view v-for="(item,index) in dataList.data" :key="item.id">
+			<view v-for="(item,index) in dataList.data" :key="index">
 				<notice-item :options="item" @click="goDetail(item)"></notice-item>
 			</view>
 			<view class="loading-more">
@@ -49,7 +49,6 @@
 				let list = [];
 				for (let i = 1; i <= 10; i++) {
 					let item = mockData.data;
-					item.id = this.newGuid();
 					list.push(item);
 				}
 				activeTab.data = activeTab.data.concat(list);
@@ -72,12 +71,6 @@
 				setTimeout(() => {
 					this.navigateFlag = false;
 				}, 200)
-			},
-			newGuid() {
-				let s4 = function() {
-					return (65536 * (1 + Math.random()) | 0).toString(16).substring(1);
-				}
-				return (s4() + s4() + "-" + s4() + "-4" + s4().substr(0, 3) + "-" + s4() + "-" + s4() + s4() + s4()).toUpperCase();
 			}
 
 		},
@@ -102,7 +95,7 @@
 			flex-direction: column;
 			/* #endif */
 			width: 750upx;
-			height: 1000upx;
+			height: 1000rpx;
 
 			.loading-more {
 				align-items: center;

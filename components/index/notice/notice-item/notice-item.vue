@@ -5,17 +5,17 @@
 			<view class="notice-people-info">
 				<view class="notice-people-info-text">
 					<view class="notice-people-info-text-head-portrait">
-						<image class="notice-people-info-text-head-portrait-image" src="../../../../static/logo.png"></image>
+						<image class="notice-people-info-text-head-portrait-image" src="/static/logo.png"></image>
 					</view>
 					<view class="notice-people-info-text-basic">
 						<view class="notice-people-info-text-name-and-sex">
 							<text class="notice-people-info-text-name">海宇浩瀚</text>
-							<image class="notice-people-info-text-sex" src="../../../../static/index/notice/man.png"></image>
+							<image class="notice-people-info-text-sex" src="/static/index/notice/man.png"></image>
 						</view>
 
 						<view class="notice-people-info-text-position-and-reamname">
 							<text class="notice-people-info-text-position">商家</text>
-							<image class="notice-people-info-text-is-reamname" src="../../../../static/index/notice/ream-name.png"></image>
+							<image class="notice-people-info-text-is-reamname" src="/static/index/notice/ream-name.png"></image>
 						</view>
 					</view>
 				</view>
