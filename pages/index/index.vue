@@ -9,7 +9,6 @@
 					</view>
 				</view>
 			</scroll-view>
-			<view class="tab-bar-line" v-if="tabIndex!=0" ></view>
 		</view>
 		<view>
 			<index-model v-if="tabIndex==0"></index-model>
@@ -94,11 +93,6 @@
 		/* #ifdef MP-ALIPAY || MP-BAIDU */
 		height: 100vh;
 		/* #endif */
-	}
-	.tab-bar-line{
-		margin-top: 2rpx;
-		height: 15upx;
-		background-color: #F8F8F8;
 	}
 
 	.scroll-h {
