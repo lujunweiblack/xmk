@@ -6,15 +6,15 @@
 					<text class="menu-item-text">发布公告</text>
 			</view>
 			<view class="menu-item">
-				<image class="menu-item-image" src="../../static/pub/icon-1.png">
+				<image class="menu-item-image" src="../../static/pub/icon-2.png">
 					<text class="menu-item-text">发布动态</text>
 			</view>
 			<view class="menu-item">
-				<image class="menu-item-image" src="../../static/pub/icon-1.png">
+				<image class="menu-item-image" src="../../static/pub/icon-3.png">
 					<text class="menu-item-text">发布作品</text>
 			</view>
 			<view class="menu-item">
-				<image class="menu-item-image" src="../../static/pub/icon-1.png">
+				<image class="menu-item-image" src="../../static/pub/icon-4.png">
 					<text class="menu-item-text">发布约拍</text>
 			</view>
 		</view>

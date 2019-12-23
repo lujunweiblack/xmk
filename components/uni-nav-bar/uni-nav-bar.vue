@@ -58,7 +58,7 @@
 				default: ""
 			},
 			isCenter: {
-				type: Boolean,
+				type: [Boolean, String],
 				default: false
 			},
 			leftText: {
