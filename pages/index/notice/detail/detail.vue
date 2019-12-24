@@ -16,8 +16,7 @@
 		},
 		data() {
 			return {
-				obj: {
-				},
+				obj: {},
 				info: {}
 
 			};
