@@ -3,28 +3,22 @@
 		<view class="item-line"></view>
 		<view class="item-content" @click="click">
 			<view class="notice-people-info">
-				<view class="notice-people-info-text">
-					<image class="notice-people-info-text-head-portrait-image" src="/static/logo.png"></image>
-					<view class="notice-people-info-text-basic">
-						<people-info-text-name-and-sex></people-info-text-name-and-sex>
-					</view>
-				</view>
+				<people-info :info="options.noticePeopleInfo"></people-info>
 				<view class="notice-people-info-notice-area">
-					<text class="notice-people-info-notice-area-text">全国</text>
+					<text class="notice-people-info-notice-area-text">{{options.noticeInfo.noticeInfoArea}}</text>
 				</view>
 			</view>
 			<view class="function-and-salary">
-				<text class="function-and-salary-text">直播合作·预算15000元/人</text>
+				<text class="function-and-salary-text">{{options.noticeInfo.noticeInfoFunctionAndSalary}}</text>
 			</view>
 			<view class="function-info">
-				<text class="function-info-text">任职资格</text>
-				<text class="function-info-text">1，形象气质佳，身材匀称，声音甜美，性格外向</text>
+				<text class="function-info-text">{{options.noticeInfo.noticeInfoFunctionInfo}}</text>
 			</view>
 			<view class="notice-content-info">
-				<view class="notice-content-info-text">17分钟前</view>
+				<view class="notice-content-info-time">{{options.noticeContentInfo.noticeContentInfoTime}}</view>
 				<view class="notice-content-info-follw">
-					<view class="notice-content-info-text notice-content-info-follw-text">已报名 2</view>
-					<view class="notice-content-info-text">阅读 27845</view>
+					<view class="notice-content-info-sign-up">已报名 {{options.noticeContentInfo.noticeContentInfoSignUp}}</view>
+					<view>阅读 {{options.noticeContentInfo.noticeInfoFunctionInfo}}</view>
 				</view>
 			</view>
 		</view>
@@ -33,11 +27,11 @@
 </template>
 
 <script>
-	import peopleInfoTextNameAndSex from "@/components/common/people-info-text-name-and-sex/people-info-text-name-and-sex.vue";
+	import peopleInfo from "@/components/common/people-info/people-info.vue";
 
 	export default {
 		components: {
-			peopleInfoTextNameAndSex
+			peopleInfo
 		},
 		props: {
 			options: {
@@ -76,22 +70,6 @@
 				flex-direction: row;
 				justify-content: space-between;
 
-				.notice-people-info-text {
-					display: flex;
-					flex-direction: row;
-					align-items: center;
-
-					.notice-people-info-text-head-portrait-image {
-						width: 85rpx;
-						height: 85rpx;
-						border-radius: 50%;
-					}
-
-					.notice-people-info-text-basic {
-						padding-left: 30rpx;
-					}
-				}
-
 				.notice-people-info-notice-area {
 					.notice-people-info-notice-area-text {
 						font-size: 33rpx;
@@ -124,17 +102,14 @@
 				display: flex;
 				flex-direction: row;
 				justify-content: space-between;
-
-				.notice-content-info-text {
-					font-size: 26rpx;
-					color: #96908f;
-				}
+				font-size: 26rpx;
+				color: #96908f;
 
 				.notice-content-info-follw {
 					display: flex;
 					flex-direction: row;
 
-					.notice-content-info-follw-text {
+					.notice-content-info-sign-up {
 						padding-right: 25rpx;
 					}
 				}

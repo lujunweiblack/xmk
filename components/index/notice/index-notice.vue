@@ -20,13 +20,31 @@
 	// 缓存页签数量
 	const MAX_CACHE_PAGE = 3;
 
+	const noticeContentInfo = {
+		"noticeContentInfoTime": "17分钟前",
+		"noticeContentInfoSignUp": "2",
+		"noticeInfoFunctionInfo": "27845"
+	}
+
+	const noticeInfo = {
+		"noticeInfoArea": "全国",
+		"noticeInfoFunctionAndSalary": "直播合作·预算15000元/人",
+		"noticeInfoFunctionInfo": "任职资格\n1，形象气质佳，身材匀称，声音甜美，性格外向..."
+	}
+
+	const noticePeopleInfo = {
+		"noticePeopleInfoName": "海宇浩瀚",
+		"noticePeopleInfoHeadPortraitImage": "/static/logo.png",
+		"noticePeopleInfoSex": "1",
+		"noticePeopleInfoPosition": "商家",
+		"noticePeopleInfoIsReamname": "1"
+	}
+
 	const mockData = {
 		data: {
-			"datetime": "40分钟前",
-			"article_type": 0,
-			"title": "uni-app行业峰会频频亮相，开发者反响热烈!",
-			"source": "DCloud",
-			"comment_count": 639
+			"noticePeopleInfo": noticePeopleInfo,
+			"noticeInfo": noticeInfo,
+			"noticeContentInfo": noticeContentInfo
 		}
 	}
 	export default {
@@ -60,7 +78,7 @@
 			},
 			goDetail(e) {
 				uni.navigateTo({
-				    url: './notice/detail/detail'
+					url: './notice/detail/detail?noticePeopleInfo=' + encodeURIComponent(JSON.stringify(e.noticePeopleInfo))
 				});
 			}
 
@@ -82,7 +100,7 @@
 				let winWidth = sys.windowWidth;
 				let winrate = 750 / winWidth;
 				let winHeight = parseInt(sys.windowHeight * winrate)
-				return "height:"+winHeight+"rpx"
+				return "height:" + winHeight + "rpx"
 			}
 		}
 	}
