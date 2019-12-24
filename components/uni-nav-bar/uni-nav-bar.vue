@@ -15,9 +15,9 @@
 					<slot name="left" />
 				</view>
 				<view class="uni-navbar__header-container uni-navbar__content_view">
-					<view class="uni-navbar__header-container-inner uni-navbar__content_view" v-if="title.length">
+					<view class="uni-navbar__header-container-inner uni-navbar__content_view" v-if="title.length || isCenter">
 						<!-- 新增固定样式 -->
-						<image class="uni-navbar__header-container-inner-image" v-if="isCenter" src="../../static/index/logo-5.png"></image>
+						<image class="uni-navbar__header-container-inner-image" v-if="isCenter" src="../../static/index/logo-7.png"></image>
 						<text class="uni-nav-bar-text uni-navbar__header-container-inner-text">{{ title }}</text>
 					</view>
 					<!-- 标题插槽 -->
@@ -58,7 +58,7 @@
 				default: ""
 			},
 			isCenter: {
-				type: Boolean,
+				type: [Boolean, String],
 				default: false
 			},
 			leftText: {
@@ -212,8 +212,9 @@
 
 	/* 新增固定样式 */
 	.uni-navbar__header-container-inner-image {
-		width: 50rpx;
-		height: 50rpx;
+		width: 230rpx;
+		height: 60rpx;
+		padding-right: 30rpx;
 	}
 
 	.uni-navbar__header-container-inner-text {
