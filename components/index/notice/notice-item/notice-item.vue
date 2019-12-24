@@ -4,19 +4,9 @@
 		<view class="item-content" @click="click">
 			<view class="notice-people-info">
 				<view class="notice-people-info-text">
-					<view class="notice-people-info-text-head-portrait">
-						<image class="notice-people-info-text-head-portrait-image" src="/static/logo.png"></image>
-					</view>
+					<image class="notice-people-info-text-head-portrait-image" src="/static/logo.png"></image>
 					<view class="notice-people-info-text-basic">
-						<view class="notice-people-info-text-name-and-sex">
-							<text class="notice-people-info-text-name">海宇浩瀚</text>
-							<image class="notice-people-info-text-sex" src="/static/index/notice/man.png"></image>
-						</view>
-
-						<view class="notice-people-info-text-position-and-reamname">
-							<text class="notice-people-info-text-position">商家</text>
-							<image class="notice-people-info-text-is-reamname" src="/static/index/notice/ream-name.png"></image>
-						</view>
+						<people-info-text-name-and-sex></people-info-text-name-and-sex>
 					</view>
 				</view>
 				<view class="notice-people-info-notice-area">
@@ -28,7 +18,7 @@
 			</view>
 			<view class="function-info">
 				<text class="function-info-text">任职资格</text>
-				<text class="function-info-text">1，形象气质佳，身材匀称，声音甜美，性格外向，敢</text>
+				<text class="function-info-text">1，形象气质佳，身材匀称，声音甜美，性格外向</text>
 			</view>
 			<view class="notice-content-info">
 				<view class="notice-content-info-text">17分钟前</view>
@@ -43,7 +33,12 @@
 </template>
 
 <script>
+	import peopleInfoTextNameAndSex from "@/components/common/people-info-text-name-and-sex/people-info-text-name-and-sex.vue";
+
 	export default {
+		components: {
+			peopleInfoTextNameAndSex
+		},
 		props: {
 			options: {
 				type: Object,
@@ -74,7 +69,7 @@
 		}
 
 		.item-content {
-			padding: 25rpx;
+			padding: 35rpx;
 
 			.notice-people-info {
 				display: flex;
@@ -84,65 +79,42 @@
 				.notice-people-info-text {
 					display: flex;
 					flex-direction: row;
+					align-items: center;
 
-					.notice-people-info-text-head-portrait {
-						.notice-people-info-text-head-portrait-image {
-							width: 100rpx;
-							height: 100rpx;
-							border-radius: 50%;
-						}
+					.notice-people-info-text-head-portrait-image {
+						width: 85rpx;
+						height: 85rpx;
+						border-radius: 50%;
 					}
 
 					.notice-people-info-text-basic {
 						padding-left: 30rpx;
-
-						.notice-people-info-text-name-and-sex {
-							.notice-people-info-text-name {
-								padding-right: 10rpx;
-							}
-
-							.notice-people-info-text-sex {
-								width: 30rpx;
-								height: 30rpx;
-							}
-						}
-
-						.notice-people-info-text-position-and-reamname {
-							.notice-people-info-text-position {
-								color: #bcbab6;
-								padding-right: 10rpx;
-							}
-
-							.notice-people-info-text-is-reamname {
-								width: 90rpx;
-								height: 35rpx;
-							}
-						}
 					}
-
 				}
 
 				.notice-people-info-notice-area {
 					.notice-people-info-notice-area-text {
-						font-size: 38rpx;
+						font-size: 33rpx;
 						color: #4a4844;
 					}
 				}
 			}
 
 			.function-and-salary {
-				padding-top: 30rpx;
+				padding-top: 25rpx;
 
 				.function-and-salary-text {
-					font-size: 40rpx;
+					font-size: 35rpx;
 				}
 			}
 
 			.function-info {
-				padding-top: 22rpx;
+				padding-top: 18rpx;
+				display: flex;
+				flex-direction: column;
 
 				.function-info-text {
-					font-size: 36rpx;
+					font-size: 31rpx;
 					color: #565351;
 				}
 			}
@@ -154,7 +126,7 @@
 				justify-content: space-between;
 
 				.notice-content-info-text {
-					font-size: 33rpx;
+					font-size: 26rpx;
 					color: #96908f;
 				}
 

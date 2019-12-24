@@ -1,6 +1,6 @@
 <template>
 	<view>
-		通告
+		
 	</view>
 </template>
 

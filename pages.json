@@ -32,6 +32,16 @@
 		"navigationBarBackgroundColor": "#F8F8F8",
 		"navigationBarTextStyle": "black"
 	},
+	"subPackages": [{
+		"root": "pages/index/notice",
+		"pages": [{
+			"path": "detail/detail",
+			"style": {
+				"navigationBarTitleText": "通告详情"
+			}
+		}]
+
+	}],
 	"tabBar": {
 		"color": "#a46e37",
 		"selectedColor": "#643506",

@@ -1,6 +1,6 @@
 <template>
 	<view class="wapper">
-		<scroll-view class="scroll-v list" enableBackToTop="true" scroll-y @scrolltolower="loadMore()">
+		<scroll-view class="scroll-v list" :style="scrollH" enableBackToTop="true" scroll-y @scrolltolower="loadMore()">
 			<view v-for="(item,index) in dataList.data" :key="index">
 				<notice-item :options="item" @click="goDetail(item)"></notice-item>
 			</view>
@@ -39,7 +39,6 @@
 				dataList: {
 					loading: "loading"
 				},
-				navigateFlag: false,
 				pulling: false
 			};
 		},
@@ -60,17 +59,9 @@
 				}, 1000)
 			},
 			goDetail(e) {
-				if (this.navigateFlag) {
-					return;
-				}
-				this.navigateFlag = true;
-				// uni.navigateTo({
-				//     url: './detail/detail?title=' + e.title
-				// });
-				console.log("查看详情")
-				setTimeout(() => {
-					this.navigateFlag = false;
-				}, 200)
+				uni.navigateTo({
+				    url: './notice/detail/detail'
+				});
 			}
 
 		},
@@ -83,6 +74,16 @@
 				};
 				this.getList();
 			}, 350)
+		},
+		computed: {
+			//通过计算函数指定scroll-view的高度以适应不同的平台
+			scrollH: function() {
+				let sys = uni.getSystemInfoSync();
+				let winWidth = sys.windowWidth;
+				let winrate = 750 / winWidth;
+				let winHeight = parseInt(sys.windowHeight * winrate)
+				return "height:"+winHeight+"rpx"
+			}
 		}
 	}
 </script>
@@ -95,7 +96,6 @@
 			flex-direction: column;
 			/* #endif */
 			width: 750upx;
-			height: 1000rpx;
 
 			.loading-more {
 				align-items: center;
